@@ -1,1 +1,89 @@
-/*Maak hier jouw CSS!*/
+/*////////////////////////////////////////////////////////////
+Table of Contents:
+1. Global Styles
+2. Areas
+    2.1 Body
+    2.2 Media Queries
+//////////////////////////////////////////////////////////////*/
+
+/*----------------------------------------------------Global Styles----------------------------------------------------------------------------------*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: lightyellow;
+}
+
+/*----------------------------------------------------Areas----------------------------------------------------------------------------------*/
+
+/*---------------------------------2.1 Body 1--------------------------------*/
+
+.item {
+    background-color: hsl(343, 100%, 39%);
+    color: #ffffff;
+    border: 2px dotted blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 16px;
+}
+
+.item-a {
+    grid-area: a;
+}
+
+.item-b {
+    grid-area: b;
+}
+
+.item-c {
+    grid-area: c;
+}
+
+.item-d {
+    grid-area: d;
+}
+
+.item-e {
+    grid-area: e;
+}
+
+.item-f {
+    grid-area: f;
+}
+
+.container {
+    margin: 16px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
+    gap: 16px;
+    grid-template-areas:
+        "a"
+        "b"
+        "c"
+        "d"
+        "e"
+        "f";
+}
+
+/*---------------------------------2.2 Media Queries 2--------------------------------*/
+
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 50px 240px 100px 120px 50px;
+        grid-template-areas:
+            "a c c"
+            "b c c"
+            "b e d"
+            "b e ."
+            "f f f";
+    }
+}
